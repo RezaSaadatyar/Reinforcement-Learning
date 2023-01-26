@@ -30,7 +30,7 @@
 ***Exploitation*** is when the agent knows all his options and chooses the best option based on the previous success rates. Whereas ***exploration*** is the concept where the agent is unaware of his opportunities and tries to explore other options to better predict and earn rewards.
 
 $A_{t}=argmaxQ_{t}(a)$<br/>
-$Q_{t}(a)$=sum of rewards when a taken prior to t / number of times a taken prior to t = $$\frac{\sum_{i=1}^(t-1) R_i)}{\sum_{i=1}^{t-1} A_i}$$
+$Q_{t}(a)$=sum of rewards when a taken prior to t / number of times a taken prior to t = $$\frac{\sum_{i=1}^{t-1} R_i}{\sum_{i=1}^{t-1} A_i}$$
 
 **Epsilon Greedy Action Selection:** The epsilon greedy algorithm chooses between *exploration* and *exploitation* by estimating the highest rewards. It determines the optimal action. It takes advantage of previous knowledge to choose exploitation, looks for new options, and select exploration.
 
