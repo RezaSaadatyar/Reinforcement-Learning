@@ -7,6 +7,12 @@
  - Value: what is good because it predicts reward
  - Model: what follows what
  
+ **Sequential Decision making:**
+ - Goal: select actions to maximize total future reward
+ - Actions may have long term consequences
+ - Reward may be delayed
+ - It may be better to sacrifice immediate reward to gain more long-term reward
+ 
  The Q-learning (QL) method is a branch of RL that improves the path besides reducing computational time. During Q-learning, the target value is calculated using the max operator, which uses a greedy policy to update Q values
  
 **Exploration-Exploitation in Epsilon Greedy Algorithm:**<br/>
