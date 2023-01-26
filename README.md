@@ -3,10 +3,10 @@
  
  **Elements of RL:**
  - Poicy:what to do
- - Reward: what is good
+ - Reward: what is good. A reward $R_{t}$ is a scalar feedback signal and indicates how well agent is doing at step t
  - Value: what is good because it predicts reward
  - Model: what follows what
- - 
+ 
  The Q-learning (QL) method is a branch of RL that improves the path besides reducing computational time. During Q-learning, the target value is calculated using the max operator, which uses a greedy policy to update Q values
  
 **Exploration-Exploitation in Epsilon Greedy Algorithm:**<br/>
