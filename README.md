@@ -1,6 +1,12 @@
  **Reinforcement Learning (RL)**<br/>
  RL is a type of artifcial intelligence (AI) method and provides an agent to discover the environment through trial-and-error.
  
+ **Elements of RL:**
+ - Poicy:what to do
+ - Reward: what is good
+ - Value: what is good because it predicts reward
+ - Model: what follows what
+ - 
  The Q-learning (QL) method is a branch of RL that improves the path besides reducing computational time. During Q-learning, the target value is calculated using the max operator, which uses a greedy policy to update Q values
  
 **Exploration-Exploitation in Epsilon Greedy Algorithm:**<br/>
