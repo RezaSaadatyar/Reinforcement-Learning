@@ -13,6 +13,17 @@
  - Reward may be delayed
  - It may be better to sacrifice immediate reward to gain more long-term reward
  
+ **Agent & Environment:**
+ - At each step t,the agent:
+   - Executes action $A_{t}$
+   - Receives observation $O_{t}$
+   - Receives scalar reward $R_{t}$
+ - The environment:
+   - Receives action $A_{t}$
+   - Emits observation $O_{t+1}$
+   - Emits scalar reward $R_{t+1}$
+ -  t increments at environment step
+ 
  The Q-learning (QL) method is a branch of RL that improves the path besides reducing computational time. During Q-learning, the target value is calculated using the max operator, which uses a greedy policy to update Q values
  
 **Exploration-Exploitation in Epsilon Greedy Algorithm:**<br/>
