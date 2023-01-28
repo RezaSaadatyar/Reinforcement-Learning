@@ -1,5 +1,8 @@
  **Reinforcement Learning (RL)**<br/>
- RL is a type of artifcial intelligence (AI) method and provides an agent to discover the environment through trial-and-error.
+Reinforcement Learning (RL) is a type of Machine Learning which is based on feedback and enables an agent to learn how to interact with an environment through executing various actions and monitoring their outcomes. Rewards are provided for successful activities and penalties imposed for unsuccessful ones, allowing the agent to learn from trial and error over time and thus become more competent in completing a given task.
+
+![RL system](https://user-images.githubusercontent.com/96347878/215255170-295c1e8a-54cb-40b9-a7c3-2ff1f66762ce.JPG)
+
  
  **Elements of RL:**
  - Poicy:what to do
