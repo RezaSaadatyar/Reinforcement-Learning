@@ -36,5 +36,8 @@ $Q_{t}(a)$=sum of rewards ( $R_i$ ) when a taken prior to t / number of times ( 
 
 **Epsilon Greedy Action Selection:** The epsilon greedy algorithm chooses between *exploration* and *exploitation* by estimating the highest rewards. It determines the optimal action. It takes advantage of previous knowledge to choose exploitation, looks for new options, and select exploration.
 
+**Advantages of Epsilon Greedy Algorithm:**<br\>
+The epsilon greedy algorithm's significant advantage is that it is able to learn from past experiences, like other decision-making models, and explore new outcomes. The ability to explore new situations and have diverse knowledge leads to better decision-making. 
+
 
 
