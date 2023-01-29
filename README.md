@@ -5,10 +5,13 @@ Reinforcement Learning (RL) is a type of Machine Learning which is based on feed
 
  
  **Elements of RL:**
- - Poicy:what to do
- - Reward: what is good. A reward $R_{t}$ is a scalar feedback signal and indicates how well agent is doing at step t
- - Value: what is good because it predicts reward
- - Model: what follows what
+ - Agent: The ability to interpret the environment and act on it.
+ - Environment: Physical environment where the agent operates.
+ - Action: Execution of actions by the agent.
+ - State: The current state of the agent.
+ - Reward: Feedback from the environment after the agent evaluates its actions.
+ - Policy: The method by which the agent decides what action to take based on the current situation.
+ - Value: The reward that an agent will receive for performing an action in a particular state.
  
  **Sequential Decision making:**
  - Goal: select actions to maximize total future reward
