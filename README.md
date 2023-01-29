@@ -47,5 +47,9 @@ The epsilon greedy algorithm's significant advantage is that it is able to learn
 **Disadvantages of Epsilon Greedy Algorithm:**<br/>
 A greedy algorithm such as Epsilon can sometimes explore new parameters and determine which user is dissatisfied. 
 
+**Multi-armed bandit Problem:**<br/>
+- ε-Greedy policy
+- Upper Confidence Bounds policy
+- Stochastic gradient ascent policy
 
 
