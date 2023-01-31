@@ -56,7 +56,9 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 - Stochastic gradient ascent policy<br/>
 $Pr({A_{t}=a})$ = $e^{H_{t}(a)}\over{\sum_{b=1}^k e^{H_{t}(b)}}$ = $\pi_{t}(a)$<br/>
 $H_{t+1}(a) = H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$
-![1](https://user-images.githubusercontent.com/96347878/215676305-5c1b35c9-fa53-46c9-9340-045bf0584523.jpg)
+
+![combine_images-min](https://user-images.githubusercontent.com/96347878/215682825-eb8806d5-d5ef-46af-b0a6-ef396c6f0458.jpg)
+
 
 ---
 
