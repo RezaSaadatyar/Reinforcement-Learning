@@ -30,6 +30,7 @@ Reinforcement Learning (RL) is a type of Machine Learning which is based on feed
    - Emits scalar reward $R_{t+1}$
  -  t increments at environment step
 
+---
 **Multi-armed bandit Problem:**<br/>
 The multi-armed bandit problem is a classic example of reinforcement learning, in which there is a slot machine with n arms (bandits) that each have their own underlying probability distribution of success. Pulling any arm will result in either a stochastic reward of R=+1 for success or R=0 for failure. The objective of this problem is to maximize the total reward collected, by pulling the arms one-by-one in sequential order, over the long run.<br/>
 ***Multi-armed bandit solutions:***
@@ -55,5 +56,8 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 - Stochastic gradient ascent policy<br/>
 $Pr({A_{t}=a})$ = $e^{H_{t}(a)}\over{\sum_{b=1}^k e^{H_{t}(b)}}$ = $\pi_{t}(a)$<br/>
 $H_{t+1}(a) = H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$
+![1](https://user-images.githubusercontent.com/96347878/215676305-5c1b35c9-fa53-46c9-9340-045bf0584523.jpg)
+
+---
 
  The Q-learning (QL) method is a branch of RL that improves the path besides reducing computational time. During Q-learning, the target value is calculated using the max operator, which uses a greedy policy to update Q values
