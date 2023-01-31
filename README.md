@@ -42,17 +42,18 @@ $A\leftarrow argmax_{a}$ $Q(a)$ with probability $1-\epsilon$ or a random action
 $R\leftarrow$ bandit or environment ( $A$ ) <br/>
 $N(A)\leftarrow N(A)+1$<br/>
 $Q(A)\leftarrow Q(A)+\frac{R-Q(A)}{N(A)}$<br/>
+where *N* is the counter for how many times action a (bandit) was chosen in the past, and *R* are the stochastic rewards for each time that bandit was chosen.<br/>
+$Q(A) \leftarrow Q(A)+\frac{R-Q(A)}{N(A)}$; $N(A)\leftarrow$ *Average samples* <br/>
+$Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
    - Exploration-Exploitation in Epsilon Greedy Algorithm:<br/>
-***Exploitation*** is when the agent knows all his options and chooses the best option based on the previous success rates. Whereas ***exploration*** is the concept where the agent is unaware of his opportunities and tries to explore other options to better predict and earn rewards.<br/>
-$A_{t}=argmaxQ_{t}(a)$<br/>
-$Q_{t}(a)$=sum of rewards ( $R_i$ ) when a taken prior to t / number of times ( $A_i$ ) taken prior to t <br/>
-**Epsilon Greedy Action Selection:** The epsilon greedy algorithm chooses between *exploration* and *exploitation* by estimating the highest rewards. It determines the optimal action. It takes advantage of previous knowledge to choose exploitation, looks for new options, and select exploration.<br/>
-**Advantages of Epsilon Greedy Algorithm:**<br/>
-The epsilon greedy algorithm's significant advantage is that it is able to learn from past experiences, like other decision-making models, and explore new outcomes. The ability to explore new situations and have diverse knowledge leads to better decision-making.<br/>
-**Disadvantages of Epsilon Greedy Algorithm:**<br/>
-A greedy algorithm such as Epsilon can sometimes explore new parameters and determine which user is dissatisfied. 
+*Exploitation* is when the agent knows all his options and chooses the best option based on the previous success rates. Whereas *exploration* is the concept where the agent is unaware of his opportunities and tries to explore other options to better predict and earn rewards.<br/>
+   - Epsilon Greedy Action Selection:** The epsilon greedy algorithm chooses between *exploration* and *exploitation* by estimating the highest rewards. It determines the optimal action. It takes advantage of previous knowledge to choose exploitation, looks for new options, and select exploration.<br/>
+   - Advantages of Epsilon Greedy Algorithm:<br/>The epsilon greedy algorithm's significant advantage is that it is able to learn from past experiences, like other decision-making models, and explore new outcomes. The ability to explore new situations and have diverse knowledge leads to better decision-making.<br/>
+   - Disadvantages of Epsilon Greedy Algorithm:<br/> A greedy algorithm such as Epsilon can sometimes explore new parameters and determine which user is dissatisfied. 
 
-- Upper Confidence Bounds policy
-- Stochastic gradient ascent policy
+- Upper Confidence Bounds policy<br/>$A_{t} = argmax {\left\lbrack\ Q_{t} + c*\sqrt{log(t) \over N_{t}(a)} \right\rbrack}$
+- Stochastic gradient ascent policy<br/>
+$Pr({A_{t}=a})$=$e^{H_{t}(a)}\over{\sum_{b=1}^k e^{H_{t}(b)}}$=$\pi_{t}(a)$<br/>
+$H_{t+1}(a)= H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$
 
  The Q-learning (QL) method is a branch of RL that improves the path besides reducing computational time. During Q-learning, the target value is calculated using the max operator, which uses a greedy policy to update Q values
