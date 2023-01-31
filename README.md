@@ -1,7 +1,7 @@
  **Reinforcement Learning (RL)**<br/>
 Reinforcement Learning (RL) is a type of Machine Learning which is based on feedback and enables an agent to learn how to interact with an environment through executing various actions and monitoring their outcomes. Rewards are provided for successful activities and penalties imposed for unsuccessful ones, allowing the agent to learn from trial and error over time and thus become more competent in completing a given task.
 
-![RL system](https://user-images.githubusercontent.com/96347878/215255170-295c1e8a-54cb-40b9-a7c3-2ff1f66762ce.JPG)
+![image](https://user-images.githubusercontent.com/96347878/215663658-f9d0339f-4ae1-4000-98ed-dc696fc805ac.png)
 
  
  **Elements of RL:**
@@ -29,27 +29,30 @@ Reinforcement Learning (RL) is a type of Machine Learning which is based on feed
    - Emits observation $O_{t+1}$
    - Emits scalar reward $R_{t+1}$
  -  t increments at environment step
- 
- The Q-learning (QL) method is a branch of RL that improves the path besides reducing computational time. During Q-learning, the target value is calculated using the max operator, which uses a greedy policy to update Q values
- 
-**Exploration-Exploitation in Epsilon Greedy Algorithm:**<br/>
-***Exploitation*** is when the agent knows all his options and chooses the best option based on the previous success rates. Whereas ***exploration*** is the concept where the agent is unaware of his opportunities and tries to explore other options to better predict and earn rewards.
 
+**Multi-armed bandit Problem:**<br/>
+The multi-armed bandit problem is a classic example of reinforcement learning, in which there is a slot machine with n arms (bandits) that each have their own underlying probability distribution of success. Pulling any arm will result in either a stochastic reward of R=+1 for success or R=0 for failure. The objective of this problem is to maximize the total reward collected, by pulling the arms one-by-one in sequential order, over the long run.<br/>
+***Multi-armed bandit solutions:***
+- ε-Greedy policy:<br/>
+Initialize, for a = 1 to k:<br/>
+$Q(a) \leftarrow 0$<br/>
+$N(a) \leftarrow 0$<br/>
+Loop forever:<br/>
+$A\leftarrow argmax_{a}$ $Q(a)$ with probability $1-\epsilon$ or a random action with probability $\epsilon$<br/>
+$R\leftarrow$ bandit or environment ( $A$ ) <br/>
+$N(A)\leftarrow N(A)+1$<br/>
+$Q(A)\leftarrow Q(A)+\frac{R-Q(A)}{N(A)}$<br/>
+   - Exploration-Exploitation in Epsilon Greedy Algorithm:<br/>
+***Exploitation*** is when the agent knows all his options and chooses the best option based on the previous success rates. Whereas ***exploration*** is the concept where the agent is unaware of his opportunities and tries to explore other options to better predict and earn rewards.<br/>
 $A_{t}=argmaxQ_{t}(a)$<br/>
-$Q_{t}(a)$=sum of rewards ( $R_i$ ) when a taken prior to t / number of times ( $A_i$ ) taken prior to t 
-
-
-
-**Epsilon Greedy Action Selection:** The epsilon greedy algorithm chooses between *exploration* and *exploitation* by estimating the highest rewards. It determines the optimal action. It takes advantage of previous knowledge to choose exploitation, looks for new options, and select exploration.
-
+$Q_{t}(a)$=sum of rewards ( $R_i$ ) when a taken prior to t / number of times ( $A_i$ ) taken prior to t <br/>
+**Epsilon Greedy Action Selection:** The epsilon greedy algorithm chooses between *exploration* and *exploitation* by estimating the highest rewards. It determines the optimal action. It takes advantage of previous knowledge to choose exploitation, looks for new options, and select exploration.<br/>
 **Advantages of Epsilon Greedy Algorithm:**<br/>
 The epsilon greedy algorithm's significant advantage is that it is able to learn from past experiences, like other decision-making models, and explore new outcomes. The ability to explore new situations and have diverse knowledge leads to better decision-making.<br/>
 **Disadvantages of Epsilon Greedy Algorithm:**<br/>
 A greedy algorithm such as Epsilon can sometimes explore new parameters and determine which user is dissatisfied. 
 
-**Multi-armed bandit Problem:**<br/>
-- ε-Greedy policy
 - Upper Confidence Bounds policy
 - Stochastic gradient ascent policy
 
-
+ The Q-learning (QL) method is a branch of RL that improves the path besides reducing computational time. During Q-learning, the target value is calculated using the max operator, which uses a greedy policy to update Q values
