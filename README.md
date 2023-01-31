@@ -32,7 +32,7 @@ Reinforcement Learning (RL) is a type of Machine Learning which is based on feed
 
 ---
 **Multi-armed bandit Problem:**<br/>
-The multi-armed bandit problem is a classic example of reinforcement learning, in which there is a slot machine with n arms (bandits) that each have their own underlying probability distribution of success. Pulling any arm will result in either a stochastic reward of R=+1 for success or R=0 for failure. The objective of this problem is to maximize the total reward collected, by pulling the arms one-by-one in sequential order, over the long run.<br/>
+The multi-armed bandit problem is a classic example of reinforcement learning, in which there is a slot machine with n arms (bandits) that each have their own underlying probability distribution of success. Pulling any arm will result in either a stochastic reward of *R=+1* for success or *R=0* for failure. The objective of this problem is to maximize the total reward collected, by pulling the arms one-by-one in sequential order, over the long run.<br/>
 ***Multi-armed bandit solutions:***
 - ε-Greedy policy:<br/>
 Initialize, for a = 1 to k:<br/>
