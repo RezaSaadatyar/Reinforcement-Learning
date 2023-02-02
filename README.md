@@ -67,4 +67,5 @@ $H_{t+1}(a) = H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$
  - SARSA<br/>
  State Action Reward State Action is an on-policy temporal difference. SARSA selects additional actions and rewards based on the same policy that decided the initial step.
  - DQN<br/>
-Deep Q Neural Network, or DQN, is Q learning with the help of neural networks. Defining and updating a Q-table in a large state space environment is a daunting task. To solve this very issue, we use the DQN algorithm to approximate Q values for every action and state
+Deep Q Neural Network, or DQN, is Q learning with the help of neural networks. Defining and updating a Q-table in a large state space environment is a daunting task. To solve this very issue, we use the DQN algorithm to approximate Q values for every action and state.
+
