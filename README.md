@@ -3,6 +3,7 @@ Reinforcement Learning (RL) is a type of Machine Learning which is based on feed
 
 ![image](https://user-images.githubusercontent.com/96347878/215663658-f9d0339f-4ae1-4000-98ed-dc696fc805ac.png)
 
+
  
  **Elements of RL:**
  - Agent: The ability to interpret the environment and act on it.
