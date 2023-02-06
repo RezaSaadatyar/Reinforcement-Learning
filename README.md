@@ -71,16 +71,36 @@ $H_{t+1}(a) = H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$
 Deep Q Neural Network, or DQN, is Q learning with the help of neural networks. Defining and updating a Q-table in a large state space environment is a daunting task. To solve this very issue, we use the DQN algorithm to approximate Q values for every action and state.
 
 - **Dynamic Programming:**<br/>
-***Iterative policy evaluation (Stochastic policy evaluation)***<br/>
-  Input $\pi$, the policy to be evaluated<br/>
-  Algorithm parameter: a small threshold $\theta > 0$ determining accuracy of estimation<br/>
-  Initialize V(s), for all $s\epsilon S^+$, arbitrarily expect that $V(terminal) = 0$<br/>
-  Loop:<br/>
-    $\Delta \leftarrow 0$<br/>
-    Loop for each $s\epsilon S$<br/>
-    $\nu \leftarrow V(s)$<br/>
-    $V(s) \leftarrow \sum_{a}\pi(a|s).\sum_{s^.,r}p(s^.,r|s,a)[r+\lambda V_{\pi}(s^.)]\Rightarrow$ Bellman equation for the State-value function           
-    $\Delta \leftarrow max(\Delta,|\nu-V(s)|)$<br/>
-    until $\Delta < \theta$<br/>
+>***Iterative policy evaluation (Stochastic policy evaluation)***<br/>
+>   Input $\pi$, the policy to be evaluated<br/>
+>  Algorithm parameter: a small threshold $\theta > 0$ determining accuracy of estimation<br/>
+>  Initialize V(s), for all $s\epsilon S^+$, arbitrarily expect that $V(terminal) = 0$<br/>
+>  Loop:<br/>
+>    $\Delta \leftarrow 0$<br/>
+>    Loop for each $s\epsilon S$<br/>
+>    $\nu \leftarrow V(s)$<br/>
+>    $V(s) \leftarrow \sum_{a}\pi(a|s).\sum_{s^.,r}p(s^.,r|s,a)[r+\lambda V_{\pi}(s^.)]\Rightarrow$ Bellman equation for the State-value function           
+>    $\Delta \leftarrow max(\Delta,|\nu-V(s)|)$<br/>
+>    until $\Delta < \theta$<br/>
+
+>***Deterministic policy evaluation***<br/>
+>$\pi_0$  $\underrightarrow{E}$  $\nu_{\pi_0}$  $\underrightarrow{I}$  $\pi_1$ $\underrightarrow{E} ... \underrightarrow{I}$ $\pi_.$  $\underrightarrow{E}$  >$\nu_.$<br/>
+>*1. Initialization:*<br/>
+>$V(s)\epsilon R$ and $\pi(s) \epsilon A(s)$ arbitrarily for all $ s \epsilon S$<br/>
+>*2. Policy Evaluation:*<br/>
+>Loop:<br/>
+>  $\Delta \leftarrow 0$<br/>
+>  Loop for each $s\epsilon S$<br/>
+>  $\nu \leftarrow V(s)$<br/>
+>  $V(s) \leftarrow \sum_{s^.,r}p(s^.,r|s,\pi(s))[r+\lambda V_{\pi}(s^.)]$<br/>
+>  $\Delta \leftarrow max(\Delta,|\nu-V(s)|)$<br/>
+>  until $\Delta < \theta$ (a small positive number determining the accuracy of estimation)<br/>
+>*3. Policy Improvement:*<br/>
+>$policy-stable \leftarrow true(1)$<br/>
+>For each $s \epsilon S$:<br/>
+>  $old-action \leftarrow \pi(s)$<br/>
+>  $\pi(s) \leftarrow argmax_a \sum_{s^.,r}p(s^.,r|s,a)[r+\lambda V_{\pi}(s^.)]$<br/>
+>  If $old-action \neq \pi(s)$, then $policy-stable \leftarrow false(0)$<br/>
+>If policy-stable, then stop and return $V \approx \nu_.$  and  $\pi \approx \pi_.$; else go to 2<br/>
 - Monte Carlo Approach
 - Temporal Difference Learning
