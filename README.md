@@ -84,9 +84,9 @@ Deep Q Neural Network, or DQN, is Q learning with the help of neural networks. D
 >    until $\Delta < \theta$<br/>
 
 >***Deterministic policy evaluation***<br/>
->$\pi_0$  $\underrightarrow{E}$  $\nu_{\pi_0}$  $\underrightarrow{I}$  $\pi_1$ $\underrightarrow{E} ... \underrightarrow{I}$ $\pi_.$  $\underrightarrow{E}$  >$\nu_.$<br/>
+>$\pi_0$  $\underrightarrow{E}$  $\nu_{\pi_0}$  $\underrightarrow{I}$  $\pi_1$ $\underrightarrow{E} ... \underrightarrow{I}$ $\pi_.$  $\underrightarrow{E}$  $\nu_.$<br/>
 >*1. Initialization:*<br/>
->$V(s)\epsilon R$ and $\pi(s) \epsilon A(s)$ arbitrarily for all $ s \epsilon S$<br/>
+>$V(s)\epsilon R$ and $\pi(s) \epsilon A(s)$ arbitrarily for all $s \epsilon S$<br/>
 >*2. Policy Evaluation:*<br/>
 >Loop:<br/>
 >  $\Delta \leftarrow 0$<br/>
@@ -96,11 +96,24 @@ Deep Q Neural Network, or DQN, is Q learning with the help of neural networks. D
 >  $\Delta \leftarrow max(\Delta,|\nu-V(s)|)$<br/>
 >  until $\Delta < \theta$ (a small positive number determining the accuracy of estimation)<br/>
 >*3. Policy Improvement:*<br/>
->$policy-stable \leftarrow true(1)$<br/>
+>policy_stable $\leftarrow$ true(1)<br/>
 >For each $s \epsilon S$:<br/>
->  $old-action \leftarrow \pi(s)$<br/>
->  $\pi(s) \leftarrow argmax_a \sum_{s^.,r}p(s^.,r|s,a)[r+\lambda V_{\pi}(s^.)]$<br/>
->  If $old-action \neq \pi(s)$, then $policy-stable \leftarrow false(0)$<br/>
->If policy-stable, then stop and return $V \approx \nu_.$  and  $\pi \approx \pi_.$; else go to 2<br/>
+>   old_action $\leftarrow \pi(s)$<br/>
+>   $\pi(s) \leftarrow argmax_a \sum_{s^.,r}p(s^.,r|s,a)[r+\lambda V_{\pi}(s^.)]$<br/>
+>   If old_action $\neq \pi(s)$, then policy_stable $\leftarrow$ false(0)<br/>
+>If policy_stable, then stop and return $V \approx \nu_.$  and  $\pi \approx \pi_.$; else go to 2<br/>
+
+>***Value Iteration***<br/>
+>*Algorithm parameter:* a small threshold $\theta > 0$ determining accuracy of estimation<br/>
+>Initialize V(s), for all $s\epsilon S^+$, arbitrarily expect that $V(terminal) = 0$<br/>
+>Loop:<br/>
+>  $\Delta \leftarrow 0$<br/>
+> Loop for each $s\epsilon S$<br/>
+>  $\nu \leftarrow V(s)$<br/>
+>  $V(s) \leftarrow max_a \sum_{s^.,r}p(s^.,r|s,a)[r+\lambda V(s^.)]$<br/>
+>  $\Delta \leftarrow max(\Delta,|\nu-V(s)|)$<br/>
+>  until $\Delta < \theta$<br/>
+>  Output a deterministic policy, $\pi \approx \pi_.$, such that<br/>
+>  $\pi(s) = argmax_a \sum_{s^.,r}p(s^.,r|s,a)[r+\lambda V(s^.)]$<br/>
 - Monte Carlo Approach
 - Temporal Difference Learning
