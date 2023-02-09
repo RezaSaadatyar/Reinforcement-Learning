@@ -63,15 +63,10 @@ $H_{t+1}(a) = H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$
 
 ---
 **Reinforcement learning algorithms:**<br/>
-- Q-Learning<br/>
- The QL method is a branch of RL that improves the path besides reducing computational time. During QL, the target value is calculated using the max operator, which uses a greedy policy to update Q values.
- - SARSA<br/>
- State Action Reward State Action is an on-policy temporal difference. SARSA selects additional actions and rewards based on the same policy that decided the initial step.
- - DQN<br/>
-Deep Q Neural Network, or DQN, is Q learning with the help of neural networks. Defining and updating a Q-table in a large state space environment is a daunting task. To solve this very issue, we use the DQN algorithm to approximate Q values for every action and state.
 
-- **Dynamic Programming:**<br/>
->***Iterative policy evaluation (Stochastic policy evaluation)***<br/>
+
+>***Dynamic Programming:***<br/>
+>>***Iterative policy evaluation (Stochastic policy evaluation)***<br/>
 >   Input $\pi$, the policy to be evaluated<br/>
 >  Algorithm parameter: a small threshold $\theta > 0$ determining accuracy of estimation<br/>
 >  Initialize V(s), for all $s\epsilon S^+$, arbitrarily expect that $V(terminal) = 0$<br/>
@@ -82,8 +77,8 @@ Deep Q Neural Network, or DQN, is Q learning with the help of neural networks. D
 >    $V(s) \leftarrow \sum_{a}\pi(a|s).\sum_{s^.,r}p(s^.,r|s,a)[r+\lambda V_{\pi}(s^.)]\Rightarrow$ Bellman equation for the State-value function           
 >    $\Delta \leftarrow max(\Delta,|\nu-V(s)|)$<br/>
 >    until $\Delta < \theta$<br/>
-
->***Deterministic policy evaluation***<br/>
+>
+>>***Deterministic policy evaluation***<br/>
 >$\pi_0$  $\underrightarrow{E}$  $\nu_{\pi_0}$  $\underrightarrow{I}$  $\pi_1$ $\underrightarrow{E} ... \underrightarrow{I}$ $\pi_.$  $\underrightarrow{E}$  $\nu_.$<br/>
 >*1. Initialization:*<br/>
 >$V(s)\epsilon R$ and $\pi(s) \epsilon A(s)$ arbitrarily for all $s \epsilon S$<br/>
@@ -102,8 +97,8 @@ Deep Q Neural Network, or DQN, is Q learning with the help of neural networks. D
 >   $\pi(s) \leftarrow argmax_a \sum_{s^.,r}p(s^.,r|s,a)[r+\lambda V_{\pi}(s^.)]$<br/>
 >   If old_action $\neq \pi(s)$, then policy_stable $\leftarrow$ false(0)<br/>
 >If policy_stable, then stop and return $V \approx \nu_.$  and  $\pi \approx \pi_.$; else go to 2<br/>
-
->***Value Iteration***<br/>
+>
+>>***Value Iteration***<br/>
 >*Algorithm parameter:* a small threshold $\theta > 0$ determining accuracy of estimation<br/>
 >Initialize V(s), for all $s\epsilon S^+$, arbitrarily expect that $V(terminal) = 0$<br/>
 >Loop:<br/>
@@ -115,9 +110,38 @@ Deep Q Neural Network, or DQN, is Q learning with the help of neural networks. D
 >  until $\Delta < \theta$<br/>
 >  Output a deterministic policy, $\pi \approx \pi_.$, such that<br/>
 >  $\pi(s) = argmax_a \sum_{s^.,r}p(s^.,r|s,a)[r+\lambda V(s^.)]$<br/>
+>
+>![Stochastic policy evaluation; gamma is 0 9](https://user-images.githubusercontent.com/96347878/216980725-64787936-3f04-4b45-b695-c4a6a937afb0.gif) ![Deterministic >policy evaluation; gamma is 0 2](https://user-images.githubusercontent.com/96347878/216985490-97f8356b-2ec8-41f5-9667-fb7eda45ed11.gif) ![Value Iteration; gamma is 0 >55](https://user-images.githubusercontent.com/96347878/216986152-a645bd57-fe06-4ae0-bacd-2bf94b7913b3.gif)<br/> 
+>![Stochastic policy evaluation; gamma is 0 99](https://user-images.githubusercontent.com/96347878/216980750-04fc11b1-89ab-41ea-bf4d-7e0d6a8294e9.gif) ![Deterministic >policy evaluation; gamma is 0 25](https://user-images.githubusercontent.com/96347878/216986033-8fe527f7-dc0e-4683-95ff-e894a6c38cf7.gif) ![Value Iteration; gamma is 0 >6](https://user-images.githubusercontent.com/96347878/216986101-28a2a1da-be3f-424a-bf58-ce8086e90853.gif)
 
-![Stochastic policy evaluation; gamma is 0 9](https://user-images.githubusercontent.com/96347878/216980725-64787936-3f04-4b45-b695-c4a6a937afb0.gif) ![Deterministic policy evaluation; gamma is 0 2](https://user-images.githubusercontent.com/96347878/216985490-97f8356b-2ec8-41f5-9667-fb7eda45ed11.gif) ![Value Iteration; gamma is 0 55](https://user-images.githubusercontent.com/96347878/216986152-a645bd57-fe06-4ae0-bacd-2bf94b7913b3.gif)<br/> 
-![Stochastic policy evaluation; gamma is 0 99](https://user-images.githubusercontent.com/96347878/216980750-04fc11b1-89ab-41ea-bf4d-7e0d6a8294e9.gif) ![Deterministic policy evaluation; gamma is 0 25](https://user-images.githubusercontent.com/96347878/216986033-8fe527f7-dc0e-4683-95ff-e894a6c38cf7.gif) ![Value Iteration; gamma is 0 6](https://user-images.githubusercontent.com/96347878/216986101-28a2a1da-be3f-424a-bf58-ce8086e90853.gif)
-
-- Monte Carlo Approach
-- Temporal Difference Learning
+- Monte Carlo Approach<br/>
+>***Temporal Difference Learning***
+>>***Q-Learning:*** Q-learning uses the off-policy learning technique, where the agent learns the desired actions based on the previous states and awards. A greedy search improves an agent's learning by considering only the maximum reward received for a particular set of actions. Previous states and previous rewards are considered for newer states of operations.<br/>
+>***Q-Learning algorithm:***<br/>
+>*Algorithm parameters: step size* $\alpha \epsilon (0, 1]$, *small* $\epsilon > 0$<br/>
+>*Initialize Q(s,a), for all* $s \epsilon S^+, a\epsilon A(s)$, *arbitrarily expect that Q(terminal, .)=0*<br/>
+>*Loop for each episode:*<br/>
+>*Initialize S*<br/>
+>*Loop for each step of episode:*<br/>
+>*Choose A from S using policy derived from Q(e.g., e-greedy)*<br/>
+>*Take action A, observe R,* $S^.$<br/>
+>*Choose* $A^.$ *from* $S^.$ *using policy derived from Q(e.g., e-greedy)*<br/>
+>$Q(S,A) \leftarrow Q(S,A) + \alpha[R+\lambda max_a Q(S^., a)-Q(S, A)]$<br/>
+>$S \leftarrow S^.$<br/>
+>*until S is terminal*<br/>
+>
+>>***State Action Reward State Action (SARSA):*** The SARSA algorithm uses the On-policy for learning, in which the agent learns from the current set of actions in the current state and the target policy. Previous states and previous rewards are not considered for newer states of operation 
+>***SARSA algorithm:***<br/>
+>*Algorithm parameters: step size* $\alpha \epsilon (0, 1]$, *small* $\epsilon > 0$<br/>
+>*Initialize Q(s,a), for all* $s \epsilon S^+, a\epsilon A(s)$, *arbitrarily expect that Q(terminal, .)=0*<br/>
+>*Loop for each episode:*v
+>*Initialize S*<br/>
+>*Choose A from S using policy derived from Q(e.g., e-greedy)*<br/>
+>*Loop for each step of episode:*<br/>
+>  *Take action A, observe R,* $S^.$<br/>
+>  *Choose* $A^.$ *from* $S^.$ *using policy derived from Q(e.g., e-greedy)*<br/>
+>  $Q(S,A) \leftarrow Q(S,A) + \alpha[R+\lambda Q(S^., A^.)-Q(S, A)]$<br/>
+>$S \leftarrow S^.; A\leftarrow A^.$<br/>
+>*until S is terminal*<br/>
+ - DQN<br/>
+Deep Q Neural Network, or DQN, is Q learning with the help of neural networks. Defining and updating a Q-table in a large state space environment is a daunting task. To solve this very issue, we use the DQN algorithm to approximate Q values for every action and state.
