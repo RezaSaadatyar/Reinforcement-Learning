@@ -115,7 +115,21 @@ $H_{t+1}(a) = H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$
 >![Stochastic policy evaluation; gamma is 0 99](https://user-images.githubusercontent.com/96347878/216980750-04fc11b1-89ab-41ea-bf4d-7e0d6a8294e9.gif) ![Deterministic >policy evaluation; gamma is 0 25](https://user-images.githubusercontent.com/96347878/216986033-8fe527f7-dc0e-4683-95ff-e894a6c38cf7.gif) ![Value Iteration; gamma is 0 >6](https://user-images.githubusercontent.com/96347878/216986101-28a2a1da-be3f-424a-bf58-ce8086e90853.gif)
 
 - Monte Carlo Approach<br/>
->***Temporal Difference Learning***
+>***Temporal Difference (TD) Learning***<br/>
+>>***TD(0):***<br/>
+>**TD(0) algorithm:**<br/>
+>*Input: the policy* $\pi$ *to be evaluated*<br/>
+>*Algorithm parameter: step size* $\alpha \epsilon (0, 1]$<br/>
+>*Initialize V(s), for all* $s \epsilon S^+$, *arbitrarily expect that V(terminal)=0*<br/>
+>*Loop for each episode:*<br/>
+>*Initialize S*<br/>
+>*Loop for each step of episode:*<br/>
+>$A \leftarrow$ *action given by* $\pi$ *for S*<br/>
+>*Take action A, observe R,* $S^.$<br/>
+>$V(S) \leftarrow V(S) + \alpha[R+\lambda V(S^.)-V(S)]$<br/>
+>$S \leftarrow S^.$<br/>
+>*untile S is terminal*<br/>
+>
 >>***Q-Learning:*** Q-learning uses the off-policy learning technique, where the agent learns the desired actions based on the previous states and awards. A greedy search improves an agent's learning by considering only the maximum reward received for a particular set of actions. Previous states and previous rewards are considered for newer states of operations.<br/>
 >***Q-Learning algorithm:***<br/>
 >*Algorithm parameters: step size* $\alpha \epsilon (0, 1]$, *small* $\epsilon > 0$<br/>
@@ -130,11 +144,11 @@ $H_{t+1}(a) = H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$
 >$S \leftarrow S^.$<br/>
 >*until S is terminal*<br/>
 >
->>***State Action Reward State Action (SARSA):*** The SARSA algorithm uses the On-policy for learning, in which the agent learns from the current set of actions in the current state and the target policy. Previous states and previous rewards are not considered for newer states of operation 
+>>***State Action Reward State Action (SARSA):*** The SARSA algorithm uses the On-policy for learning, in which the agent learns from the current set of actions in the current state and the target policy. Previous states and previous rewards are not considered for newer states of operation.<br/> 
 >***SARSA algorithm:***<br/>
 >*Algorithm parameters: step size* $\alpha \epsilon (0, 1]$, *small* $\epsilon > 0$<br/>
 >*Initialize Q(s,a), for all* $s \epsilon S^+, a\epsilon A(s)$, *arbitrarily expect that Q(terminal, .)=0*<br/>
->*Loop for each episode:*v
+>*Loop for each episode:*<br/>
 >*Initialize S*<br/>
 >*Choose A from S using policy derived from Q(e.g., e-greedy)*<br/>
 >*Loop for each step of episode:*<br/>
@@ -143,5 +157,5 @@ $H_{t+1}(a) = H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$
 >  $Q(S,A) \leftarrow Q(S,A) + \alpha[R+\lambda Q(S^., A^.)-Q(S, A)]$<br/>
 >$S \leftarrow S^.; A\leftarrow A^.$<br/>
 >*until S is terminal*<br/>
- - DQN<br/>
-Deep Q Neural Network, or DQN, is Q learning with the help of neural networks. Defining and updating a Q-table in a large state space environment is a daunting task. To solve this very issue, we use the DQN algorithm to approximate Q values for every action and state.
+>
+>>***Deep Q Neural Network (DQN):*** DQN, is Q learning with the help of neural networks. Defining and updating a Q-table in a large state space environment is a daunting task. To solve this very issue, we use the DQN algorithm to approximate Q values for every action and state.
