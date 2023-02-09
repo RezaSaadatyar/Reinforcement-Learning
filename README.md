@@ -158,4 +158,5 @@ $H_{t+1}(a) = H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$
 >$S \leftarrow S^.; A\leftarrow A^.$<br/>
 >*until S is terminal*<br/>
 >
->>***Deep Q Neural Network (DQN):*** DQN, is Q learning with the help of neural networks. Defining and updating a Q-table in a large state space environment is a daunting task. To solve this very issue, we use the DQN algorithm to approximate Q values for every action and state.
+>>***Deep Q Neural Network (DQN):*** DQN, is Q learning with the help of neural networks. Defining and updating a Q-table in a large state space environment is a daunting task. To solve this very issue, we use the DQN algorithm to approximate Q values for every action and state.<br/>
+> ![TD(0); gamma is 0 95; alpha is 0 1](https://user-images.githubusercontent.com/96347878/217924378-6fcf6c71-19e9-4e84-adbf-713585bd8b22.gif) ![TD(0); gamma(0 999); alpha(0 1)](https://user-images.githubusercontent.com/96347878/217923879-1591916f-9d12-4732-b45a-c2ca0d6651b0.gif)
