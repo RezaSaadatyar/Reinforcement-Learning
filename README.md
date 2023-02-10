@@ -114,7 +114,20 @@ $H_{t+1}(a) = H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$
 >![Stochastic policy evaluation; gamma is 0 9](https://user-images.githubusercontent.com/96347878/216980725-64787936-3f04-4b45-b695-c4a6a937afb0.gif) ![Deterministic >policy evaluation; gamma is 0 2](https://user-images.githubusercontent.com/96347878/216985490-97f8356b-2ec8-41f5-9667-fb7eda45ed11.gif) ![Value Iteration; gamma is 0 >55](https://user-images.githubusercontent.com/96347878/216986152-a645bd57-fe06-4ae0-bacd-2bf94b7913b3.gif)<br/> 
 >![Stochastic policy evaluation; gamma is 0 99](https://user-images.githubusercontent.com/96347878/216980750-04fc11b1-89ab-41ea-bf4d-7e0d6a8294e9.gif) ![Deterministic >policy evaluation; gamma is 0 25](https://user-images.githubusercontent.com/96347878/216986033-8fe527f7-dc0e-4683-95ff-e894a6c38cf7.gif) ![Value Iteration; gamma is 0 >6](https://user-images.githubusercontent.com/96347878/216986101-28a2a1da-be3f-424a-bf58-ce8086e90853.gif)
 >
->>***Monte Carlo Approach***<br/>
+>***Monte Carlo:***<br/>
+>>***Value prediction using Monte Carlo with First-visit algorithm:***<br/>
+>*Input: a policy* $\pi$ *to be evaluated*<br/>
+>*Initialize:*<br/>
+>   $V(s)\epsilon R$, *arbitrarily, for all* $s\epsilon S$<br/>
+>   *Returns(s)* $\leftarrow$ *an empty list, for all* $s\epsilon S$<br/>
+>*Loop (for each episode):*<br/>
+>   *Generate an episode following* $\pi: S_0, A_0, R_1, S_1, A_1, R_2,..., S_{T-1}, A_{T-1}, R_T$<br/>
+>   $G\leftarrow 0$<br/>
+>   *Loop for each of episode, t=T-1, T-2, ... 0:*<br/>
+>      $G\leftarrow \lambda G+R_{t+1}$<br/>
+>      *Unless* $S_t$ *appears in* $S_0, S_1, ..., S_{t-1}:$<br/>
+>      *Append G to Retuens* $(S_t)$<br/>
+>      $V(S_t) \leftarrow$ average(Retuens $(S_t))$<br/>
 >
 >***Temporal Difference (TD) Learning***<br/>
 >>***TD(0):*** TD(0) is the simplest form of TD learning. This type of TD learning updates the value function with the value of each step along the way, and rewards along the way are obtained. After a sufficient number of samplings (in the limit of infinity), the observed reward is the key to keeping the algorithm grounded.<br/>
