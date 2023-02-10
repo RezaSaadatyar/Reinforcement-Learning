@@ -128,8 +128,7 @@ $H_{t+1}(a) = H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$
 >      *Unless* $S_t$ *appears in* $S_0, S_1, ..., S_{t-1}:$<br/>
 >      *Append G to Retuens* $(S_t)$<br/>
 >      $V(S_t) \leftarrow$ average(Retuens $(S_t))$<br/>
->![Value prediction; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218038914-64fbb049-d254-4956-8fb6-f3b4d77fabb9.gif) ![Value prediction; gamma(0 999)](https://user-images.githubusercontent.com/96347878/218040461-88f72a02-f5b4-4940-9e8c-918f3bb90e51.gif)
-<br/>
+>![Value prediction; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218038914-64fbb049-d254-4956-8fb6-f3b4d77fabb9.gif) ![Value prediction; gamma(0 999)](https://user-images.githubusercontent.com/96347878/218040461-88f72a02-f5b4-4940-9e8c-918f3bb90e51.gif)<br/>
 >
 >***Temporal Difference (TD) Learning***<br/>
 >>***TD(0):*** TD(0) is the simplest form of TD learning. This type of TD learning updates the value function with the value of each step along the way, and rewards along the way are obtained. After a sufficient number of samplings (in the limit of infinity), the observed reward is the key to keeping the algorithm grounded.<br/>
