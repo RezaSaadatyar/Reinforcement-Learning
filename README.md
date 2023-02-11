@@ -121,13 +121,48 @@ $H_{t+1}(a) = H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$
 >   $V(s)\epsilon R$, *arbitrarily, for all* $s\epsilon S$<br/>
 >   *Returns(s)* $\leftarrow$ *an empty list, for all* $s\epsilon S$<br/>
 >*Loop (for each episode):*<br/>
->   *Generate an episode following* $\pi: S_0, A_0, R_1, S_1, A_1, R_2,..., S_{T-1}, A_{T-1}, R_T$<br/>
->   $G\leftarrow 0$<br/>
->   *Loop for each of episode, t=T-1, T-2, ... 0:*<br/>
->      $G\leftarrow \lambda G+R_{t+1}$<br/>
->      *Unless* $S_t$ *appears in* $S_0, S_1, ..., S_{t-1}:$<br/>
->      *Append G to Retuens* $(S_t)$<br/>
->      $V(S_t) \leftarrow$ average(Retuens $(S_t))$<br/>
+>*Generate an episode following* $\pi: S_0, A_0, R_1, S_1, A_1, R_2,..., S_{T-1}, A_{T-1}, R_T$<br/>
+>$G \leftarrow 0$<br/>
+>*Loop for each of episode, t=T-1, T-2, ... 0:*<br/>
+>$G \leftarrow \lambda G+R_{t+1}$<br/>
+>*Unless* $S_t$ *appears in* $S_0, S_1, ..., S_{t-1}:$<br/>
+>*Append G to Retuens* $(S_t)$<br/>
+>$V(S_t) \leftarrow$ average(Retuens $(S_t))$<br/>
+>
+>>***Q or Action prediction using Monte Carlo with First-visit algorithm:***<br/>
+>*Initialize:*<br/>
+>$\pi(s)\epsilon A(s)$, *arbitrarily, for all* $s\epsilon S$<br/>
+>$Q(s,a)\epsilon R$, *arbitrarily, for all* $s\epsilon S, a\epsilon A(s)$<br/>
+>*Returns(s,a)* $\leftarrow$ an empty list, for all $s\epsilon S, a\epsilon A(s)$<br/>
+>*Loop (for each episode):*<br/>
+>*Choose* $S_0\epsilon S, A_0\epsilon A(S_0)$ *randomly such that all pairs have probability > 0*<br/>
+>*Generate an episode from* $S_0, A_0,$ *following* $\pi:S_0, A_0, R_1, S_1, A_1, R_2,..., S_{T-1}, A_{T-1}, R_T$<br/>
+>$G \leftarrow 0$<br/>
+>*Loop for each of episode, t=T-1, T-2, ... 0:*<br/>
+>$G\leftarrow \lambda G+R_{t+1}$<br/>
+>*Unless the pairs* $S_t, A_t$ *appears in* $S_0, S_1, A_1, ..., S_{t-1}, A_{t-1}:$<br/>
+>*Append G to Retuens* $(S_t, A_t)$<br/>
+>$Q(S_t, A_t)\leftarrow$ *average(Retuens*$(S_t, A_t))$<br/>
+>$\pi(s) = argmax_a Q(s,a)$<br/>
+>
+>>***On-policy Monte Carlo control:***<br/>
+>*Initialize:*<br/>
+>   *small* $\epsilon > 0$<br/>
+>   $\pi(s)\leftarrow$ *arbitrarily* $\epsilon-soft$ *policy*<br/>
+>  $Q(s,a)\epsilon R$ *arbitrarily, for all* $s\epsilon S, a\epsilon A(s)$<br/>
+>   *Returns(s,a)* $\leftarrow$ *empty list, for all* $s\epsilon S, a\epsilon A(s)$<br/>
+>*Loop (for each episode):*<br/>
+>*Generate an episode following* $\pi:S_0, A_0, R_1, S_1, A_1, R_2,..., S_{T-1}, A_{T-1}, R_T$<br/>
+>$G \leftarrow 0$<br/>
+>*Loop for each of episode, t=T-1, T-2, ... 0:*<br/>
+>$G \leftarrow \lambda G+R_{t+1}$<br/>
+>*Unless the pairs* $S_t, A_t$ *appears in* $S_0, S_1, A_1, ..., S_{t-1}, A_{t-1}:$<br/>
+>*Append G to Retuens*$(S_t, A_t)$<br/>
+>$Q(S_t, A_t)\leftarrow$ *average(Retuens*$(S_t, A_t))$<br/>
+>$A^.\leftarrow argmax_a Q(S_t, a)$<br/>
+>*For all* $a \epsilon A(S_t):$<br/>
+>$\pi(a|S_t)\leftarrow 1-\epsilon+\epsilon+\epsilon/|A(S_t)|$ *if* $a=A^*$  *or* $\epsilon/|A(S_t)|$ *if* $a\neq A^*$
+
 >![Value prediction; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218038914-64fbb049-d254-4956-8fb6-f3b4d77fabb9.gif) ![Value prediction; gamma(0 999)](https://user-images.githubusercontent.com/96347878/218040461-88f72a02-f5b4-4940-9e8c-918f3bb90e51.gif)<br/>
 >
 >***Temporal Difference (TD) Learning***<br/>
