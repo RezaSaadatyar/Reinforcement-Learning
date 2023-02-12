@@ -109,9 +109,8 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >  Output a deterministic policy, $\pi \approx \pi_.$, such that<br/>
 >  $\pi(s) = argmax_a \sum_{s^.,r}p(s^.,r|s,a)[r+\lambda V(s^.)]$<br/>
 >
->![Iterative policy; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218332855-944eb615-b676-4948-b6ac-54482fca7a7f.gif) ![Policy iteration; gamma(0 13)](https://user-images.githubusercontent.com/96347878/218333146-ca4b6ccb-042b-470f-9dc1-a40eff6f0e05.gif) ![Value iteration; gamma(0 3)](https://user-images.githubusercontent.com/96347878/218334444-a0031a85-f408-43bd-af23-4e4a8aa58fb1.gif)
-
-![Iterative policy; gamma(0 999)](https://user-images.githubusercontent.com/96347878/218332858-c94d6525-bd7b-4293-8888-4d2077298a36.gif) ![Policy iteration; gamma(0 15)](https://user-images.githubusercontent.com/96347878/218333154-6ed92bdd-bb3b-4a89-9c33-087a98661498.gif) ![Value iteration; gamma(0 35)](https://user-images.githubusercontent.com/96347878/218334437-d5542931-8cad-4464-afd4-cf6f8acab223.gif)
+>![Iterative policy; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218334995-ea0afe07-512d-48a6-855e-5f8bc287b6bf.gif)![Policy iteration; gamma(0 13)](https://user-images.githubusercontent.com/96347878/218335010-f32e0415-3487-4dfa-ac6e-93f7064c7183.gif) ![Value iteration; gamma(0 3)](https://user-images.githubusercontent.com/96347878/218335023-5727e22d-1f90-4d3c-934b-af6dee8e801e.gif)
+![Iterative policy; gamma(0 999)](https://user-images.githubusercontent.com/96347878/218335026-3c77e03c-fbb5-476b-bdae-7b64704ec744.gif) ![Policy iteration; gamma(0 15)](https://user-images.githubusercontent.com/96347878/218335029-c36a2afd-d9fb-4ba7-b76c-05d91cb55b98.gif) ![Value iteration; gamma(0 35)](https://user-images.githubusercontent.com/96347878/218335035-89ec86ad-b5b7-4416-a955-289963a11413.gif)
 
 >
 >***Monte Carlo:***<br/>
