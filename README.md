@@ -64,7 +64,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 **Reinforcement learning algorithms:**<br/>
 
 >***Dynamic Programming:***<br/>
->>***Iterative policy evaluation (Stochastic policy evaluation)***<br/>
+>>***Iterative Policy Evaluation, for estimating*** $V \approx \nu_\pi$:<br/>
 >   Input $\pi$, the policy to be evaluated<br/>
 >  Algorithm parameter: a small threshold $\theta > 0$ determining accuracy of estimation<br/>
 >  Initialize V(s), for all $s\epsilon S^+$, arbitrarily expect that $V(terminal) = 0$<br/>
@@ -76,7 +76,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >    $\Delta \leftarrow max(\Delta,|\nu-V(s)|)$<br/>
 >    until $\Delta < \theta$<br/>
 >
->>***Deterministic policy evaluation***<br/>
+>>***Policy Iteration (using iterative policy evaluation) for estimating*** $\pi \approx \pi_.$:<br/>
 >$\pi_0$  $\underrightarrow{E}$  $\nu_{\pi_0}$  $\underrightarrow{I}$  $\pi_1$ $\underrightarrow{E} ... \underrightarrow{I}$ $\pi_.$  $\underrightarrow{E}$  $\nu_.$<br/>
 >*1. Initialization:*<br/>
 >$V(s)\epsilon R$ and $\pi(s) \epsilon A(s)$ arbitrarily for all $s \epsilon S$<br/>
@@ -96,7 +96,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >   If old_action $\neq \pi(s)$, then policy_stable $\leftarrow$ false(0)<br/>
 >If policy_stable, then stop and return $V \approx \nu_.$  and  $\pi \approx \pi_.$; else go to 2<br/>
 >
->>***Value Iteration***<br/>
+>>***Value Iteration, for estimating*** $\pi \approx \pi_.$:<br/>
 >*Algorithm parameter:* a small threshold $\theta > 0$ determining accuracy of estimation<br/>
 >Initialize V(s), for all $s\epsilon S^+$, arbitrarily expect that $V(terminal) = 0$<br/>
 >Loop:<br/>
@@ -109,8 +109,8 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >  Output a deterministic policy, $\pi \approx \pi_.$, such that<br/>
 >  $\pi(s) = argmax_a \sum_{s^.,r}p(s^.,r|s,a)[r+\lambda V(s^.)]$<br/>
 >
->![Stochastic policy evaluation; gamma is 0 9](https://user-images.githubusercontent.com/96347878/216980725-64787936-3f04-4b45-b695-c4a6a937afb0.gif) ![Deterministic >policy evaluation; gamma is 0 2](https://user-images.githubusercontent.com/96347878/216985490-97f8356b-2ec8-41f5-9667-fb7eda45ed11.gif) ![Value Iteration; gamma is 0 >55](https://user-images.githubusercontent.com/96347878/216986152-a645bd57-fe06-4ae0-bacd-2bf94b7913b3.gif)<br/> 
->![Stochastic policy evaluation; gamma is 0 99](https://user-images.githubusercontent.com/96347878/216980750-04fc11b1-89ab-41ea-bf4d-7e0d6a8294e9.gif) ![Deterministic >policy evaluation; gamma is 0 25](https://user-images.githubusercontent.com/96347878/216986033-8fe527f7-dc0e-4683-95ff-e894a6c38cf7.gif) ![Value Iteration; gamma is 0 >6](https://user-images.githubusercontent.com/96347878/216986101-28a2a1da-be3f-424a-bf58-ce8086e90853.gif)
+>![Iterative policy; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218332855-944eb615-b676-4948-b6ac-54482fca7a7f.gif)![Policy iteration; gamma(0 13)](https://user-images.githubusercontent.com/96347878/218333146-ca4b6ccb-042b-470f-9dc1-a40eff6f0e05.gif) ![Value iteration; gamma(0 3)](https://user-images.githubusercontent.com/96347878/218333170-b780c355-3f4e-42cc-9a44-72c1a34f1655.gif)
+![Iterative policy; gamma(0 999)](https://user-images.githubusercontent.com/96347878/218332858-c94d6525-bd7b-4293-8888-4d2077298a36.gif)![Policy iteration; gamma(0 15)](https://user-images.githubusercontent.com/96347878/218333154-6ed92bdd-bb3b-4a89-9c33-087a98661498.gif)![Value iteration; gamma(0 35)](https://user-images.githubusercontent.com/96347878/218333177-b8750dcd-2c6f-4089-84d9-c66313313dae.gif)
 >
 >***Monte Carlo:***<br/>
 >>***Value prediction using Monte Carlo with First-visit algorithm:***<br/>
