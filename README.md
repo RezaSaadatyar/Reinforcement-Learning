@@ -64,7 +64,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 **Reinforcement learning algorithms:**<br/>
 
 >***Dynamic Programming:***<br/>
->>***Iterative Policy Evaluation, for estimating*** $V \approx \nu_\pi$:<br/>
+>>***Iterative Policy Evaluation, for estimating*** $V \approx \nu_\pi$ :<br/>
 >   Input $\pi$, the policy to be evaluated<br/>
 >  Algorithm parameter: a small threshold $\theta > 0$ determining accuracy of estimation<br/>
 >  Initialize V(s), for all $s\epsilon S^+$, arbitrarily expect that $V(terminal) = 0$<br/>
@@ -76,7 +76,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >    $\Delta \leftarrow max(\Delta,|\nu-V(s)|)$<br/>
 >    until $\Delta < \theta$<br/>
 >
->>***Policy Iteration (using iterative policy evaluation) for estimating*** $\pi \approx \pi_.$:<br/>
+>>***Policy Iteration (using iterative policy evaluation) for estimating*** $\pi \approx \pi_.$ :<br/>
 >$\pi_0$  $\underrightarrow{E}$  $\nu_{\pi_0}$  $\underrightarrow{I}$  $\pi_1$ $\underrightarrow{E} ... \underrightarrow{I}$ $\pi_.$  $\underrightarrow{E}$  $\nu_.$<br/>
 >*1. Initialization:*<br/>
 >$V(s)\epsilon R$ and $\pi(s) \epsilon A(s)$ arbitrarily for all $s \epsilon S$<br/>
@@ -96,7 +96,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >   If old_action $\neq \pi(s)$, then policy_stable $\leftarrow$ false(0)<br/>
 >If policy_stable, then stop and return $V \approx \nu_.$  and  $\pi \approx \pi_.$; else go to 2<br/>
 >
->>***Value Iteration, for estimating*** $\pi \approx \pi_.$:<br/>
+>>***Value Iteration, for estimating*** $\pi \approx \pi_.$ :<br/>
 >*Algorithm parameter:* a small threshold $\theta > 0$ determining accuracy of estimation<br/>
 >Initialize V(s), for all $s\epsilon S^+$, arbitrarily expect that $V(terminal) = 0$<br/>
 >Loop:<br/>
@@ -113,7 +113,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 ![Iterative policy; gamma(0 999)](https://user-images.githubusercontent.com/96347878/218335026-3c77e03c-fbb5-476b-bdae-7b64704ec744.gif) ![Policy iteration; gamma(0 15)](https://user-images.githubusercontent.com/96347878/218335029-c36a2afd-d9fb-4ba7-b76c-05d91cb55b98.gif) ![Value iteration; gamma(0 35)](https://user-images.githubusercontent.com/96347878/218335035-89ec86ad-b5b7-4416-a955-289963a11413.gif)
 
 >
->***Monte Carlo:***<br/>
+>***Monte Carlo Methods:***<br/>
 >>***Value prediction using Monte Carlo with First-visit algorithm:***<br/>
 >*Input: a policy* $\pi$ *to be evaluated*<br/>
 >*Initialize:*<br/>
