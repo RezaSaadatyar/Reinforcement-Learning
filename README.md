@@ -114,7 +114,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 
 >
 >***Monte Carlo Methods:***<br/>
->>***Value prediction using Monte Carlo with First-visit algorithm:***<br/>
+>>***First-visit MC prediction, for estimating*** $V \approx \nu_\pi$ :<br/>
 >*Input: a policy* $\pi$ *to be evaluated*<br/>
 >*Initialize:*<br/>
 >   $V(s)\epsilon R$, *arbitrarily, for all* $s\epsilon S$<br/>
@@ -128,7 +128,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >*Append G to Retuens* $(S_t)$<br/>
 >$V(S_t) \leftarrow$ average(Retuens $(S_t))$<br/>
 >
->>***Q or Action prediction using Monte Carlo with First-visit algorithm:***<br/>
+>>***Monte Carlo ES (Exploring Starts), for estimating*** $\pi \approx \pi_.$ :<br/>
 >*Initialize:*<br/>
 >$\pi(s)\epsilon A(s)$, *arbitrarily, for all* $s\epsilon S$<br/>
 >$Q(s,a)\epsilon R$, *arbitrarily, for all* $s\epsilon S, a\epsilon A(s)$<br/>
@@ -144,7 +144,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >$Q(S_t, A_t)\leftarrow$ *average(Retuens*$(S_t, A_t))$<br/>
 >$\pi(s) = argmax_a Q(s,a)$<br/>
 >
->>***On-policy Monte Carlo control:***<br/>
+>>***On-policy ﬁrst-visit MC control (for*** $\epsilon$***-soft policies), estimates*** $\pi \approx \pi_.$ :<br/>
 >*Initialize:*<br/>
 >   *small* $\epsilon > 0$<br/>
 >   $\pi(s)\leftarrow$ *arbitrarily* $\epsilon-soft$ *policy*<br/>
