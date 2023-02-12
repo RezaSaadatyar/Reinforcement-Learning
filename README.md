@@ -164,8 +164,8 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >![First-visit MC; gamma(0 999)](https://user-images.githubusercontent.com/96347878/218338749-ea0bf505-58b0-4e54-90a8-7da5e49aef23.gif)![Exploring Starts; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218341503-6baa2c11-02dc-422f-b51d-39b948da7809.gif) ![On-policy; gamma(0 98)](https://user-images.githubusercontent.com/96347878/218342760-6664aef4-3ef0-475c-8790-5c52fab18a38.gif)![First-visit MC; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218338754-6ff7a02f-9a6a-49c2-a540-3fef31e98c58.gif)![Exploring Starts; gamma(0 9999)](https://user-images.githubusercontent.com/96347878/218343028-c253c187-66b8-4df2-95f9-6441ea3a8ea9.gif)![On-policy; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218342795-5d498a36-05cf-4c87-8c39-c010baadb865.gif)
 >
 >***Temporal Difference (TD) Learning***<br/>
->>***TD(0):*** TD(0) is the simplest form of TD learning. This type of TD learning updates the value function with the value of each step along the way, and rewards along the way are obtained. After a sufficient number of samplings (in the limit of infinity), the observed reward is the key to keeping the algorithm grounded.<br/>
->**TD(0) algorithm:**<br/>
+>>***TD(0) algorithm:*** TD(0) is the simplest form of TD learning. This type of TD learning updates the value function with the value of each step along the way, and rewards along the way are obtained. After a sufficient number of samplings (in the limit of infinity), the observed reward is the key to keeping the algorithm grounded.<br/>
+>***Tabular TD(0) for estimating*** $\nu_\pi$:<br/>
 >*Input: the policy* $\pi$ *to be evaluated*<br/>
 >*Algorithm parameter: step size* $\alpha \epsilon (0, 1]$<br/>
 >*Initialize V(s), for all* $s \epsilon S^+$, *arbitrarily expect that V(terminal)=0*<br/>
@@ -179,7 +179,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >*untile S is terminal*<br/>
 >
 >>***Q-Learning:*** Q-learning uses the off-policy learning technique, where the agent learns the desired actions based on the previous states and awards. A greedy search improves an agent's learning by considering only the maximum reward received for a particular set of actions. Previous states and previous rewards are considered for newer states of operations.<br/>
->***Q-Learning algorithm:***<br/>
+>***Q-learning (off-policy TD control) for estimating** $\pi \approx \pi_.$ :<br/>
 >*Algorithm parameters: step size* $\alpha \epsilon (0, 1]$, *small* $\epsilon > 0$<br/>
 >*Initialize Q(s,a), for all* $s \epsilon S^+, a\epsilon A(s)$, *arbitrarily expect that Q(terminal, .)=0*<br/>
 >*Loop for each episode:*<br/>
@@ -193,7 +193,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >*until S is terminal*<br/>
 >
 >>***State Action Reward State Action (SARSA):*** The SARSA algorithm uses the On-policy for learning, in which the agent learns from the current set of actions in the current state and the target policy. Previous states and previous rewards are not considered for newer states of operation.<br/> 
->***SARSA algorithm:***<br/>
+>***Sarsa (on-policy TD control) for estimating*** $Q \approx q_0$ :<br/>
 >*Algorithm parameters: step size* $\alpha \epsilon (0, 1]$, *small* $\epsilon > 0$<br/>
 >*Initialize Q(s,a), for all* $s \epsilon S^+, a\epsilon A(s)$, *arbitrarily expect that Q(terminal, .)=0*<br/>
 >*Loop for each episode:*<br/>
