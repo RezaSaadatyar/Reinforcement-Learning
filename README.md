@@ -111,7 +111,6 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >
 >![Iterative policy; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218334995-ea0afe07-512d-48a6-855e-5f8bc287b6bf.gif)![Policy iteration; gamma(0 13)](https://user-images.githubusercontent.com/96347878/218335010-f32e0415-3487-4dfa-ac6e-93f7064c7183.gif) ![Value iteration; gamma(0 3)](https://user-images.githubusercontent.com/96347878/218335023-5727e22d-1f90-4d3c-934b-af6dee8e801e.gif)
 ![Iterative policy; gamma(0 999)](https://user-images.githubusercontent.com/96347878/218335026-3c77e03c-fbb5-476b-bdae-7b64704ec744.gif) ![Policy iteration; gamma(0 15)](https://user-images.githubusercontent.com/96347878/218335029-c36a2afd-d9fb-4ba7-b76c-05d91cb55b98.gif) ![Value iteration; gamma(0 35)](https://user-images.githubusercontent.com/96347878/218335035-89ec86ad-b5b7-4416-a955-289963a11413.gif)
-
 >
 >***Monte Carlo Methods:***<br/>
 >>***First-visit MC prediction, for estimating*** $V \approx \nu_\pi$ :<br/>
@@ -161,7 +160,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >$A^.\leftarrow argmax_a Q(S_t, a)$<br/>
 >*For all* $a \epsilon A(S_t):$<br/>
 >$\pi(a|S_t)\leftarrow 1-\epsilon+\epsilon+\epsilon/|A(S_t)|$ *if* $a=A^*$  *or* $\epsilon/|A(S_t)|$ *if* $a\neq A^*$
-
+>
 >![First-visit MC; gamma(0 999)](https://user-images.githubusercontent.com/96347878/218338749-ea0bf505-58b0-4e54-90a8-7da5e49aef23.gif)![Exploring Starts; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218341503-6baa2c11-02dc-422f-b51d-39b948da7809.gif) ![On-policy; gamma(0 98)](https://user-images.githubusercontent.com/96347878/218342760-6664aef4-3ef0-475c-8790-5c52fab18a38.gif)![First-visit MC; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218338754-6ff7a02f-9a6a-49c2-a540-3fef31e98c58.gif)![Exploring Starts; gamma(0 9999)](https://user-images.githubusercontent.com/96347878/218343028-c253c187-66b8-4df2-95f9-6441ea3a8ea9.gif)![On-policy; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218342795-5d498a36-05cf-4c87-8c39-c010baadb865.gif)
 >
 >***Temporal Difference (TD) Learning***<br/>
