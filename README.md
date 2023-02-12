@@ -35,7 +35,7 @@ Reinforcement Learning (RL) is a type of Machine Learning which is based on feed
 **Multi-armed bandit Problem:**<br/>
 The multi-armed bandit problem is a classic example of reinforcement learning, in which there is a slot machine with n arms (bandits) that each have their own underlying probability distribution of success. Pulling any arm will result in either a stochastic reward of *R=+1* for success or *R=0* for failure. The objective of this problem is to maximize the total reward collected, by pulling the arms one-by-one in sequential order, over the long run.<br/>
 ***Multi-armed bandit solutions:***
-- ε-Greedy policy:<br/>
+- ***ε-Greedy policy***:<br/>
 Initialize, for a = 1 to k:<br/>
 $Q(a) \leftarrow 0$<br/>
 $N(a) \leftarrow 0$<br/>
@@ -45,6 +45,7 @@ $R\leftarrow$ bandit or environment ( $A$ ) <br/>
 $N(A)\leftarrow N(A)+1$<br/>
 $Q(A)\leftarrow Q(A)+\frac{R-Q(A)}{N(A)}$<br/>
 where *N* is the counter for how many times action a (bandit) was chosen in the past, and *R* are the stochastic rewards for each time that bandit was chosen.<br/>
+- ***Epsilon greedy Algorithm for N episode in stationary & non-stationary state:***<br/>
 $Q(A) \leftarrow Q(A)+\frac{R-Q(A)}{N(A)}$; $N(A)\leftarrow$ *Average samples* <br/>
 $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
    - Exploration-Exploitation in Epsilon Greedy Algorithm:<br/>
@@ -52,13 +53,13 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
    - Epsilon Greedy Action Selection:** The epsilon greedy algorithm chooses between *exploration* and *exploitation* by estimating the highest rewards. It determines the optimal action. It takes advantage of previous knowledge to choose exploitation, looks for new options, and select exploration.<br/>
    - Advantages of Epsilon Greedy Algorithm:<br/>The epsilon greedy algorithm's significant advantage is that it is able to learn from past experiences, like other decision-making models, and explore new outcomes. The ability to explore new situations and have diverse knowledge leads to better decision-making.<br/>
    - Disadvantages of Epsilon Greedy Algorithm:<br/> A greedy algorithm such as Epsilon can sometimes explore new parameters and determine which user is dissatisfied. 
+- ***Upper Confidence Bounds policy (UCB)***<br/>$A_{t} = argmax {\left\lbrack\ Q_{t} + c*\sqrt{log(t) \over N_{t}(a)} \right\rbrack}$<br/>
+- ***Stochastic gradient ascent policy (SGA)***<br/>
+    $Pr({A_{t}=a})$ = $e^{H_{t}(a)}\over{\sum_{b=1}^k e^{H_{t}(b)}}$ = $\pi_{t}(a)$
+    $H_{t+1}(a) = H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$<br/>
+![Greedy](https://user-images.githubusercontent.com/96347878/218325166-2ca3fc59-2827-4e4e-ae89-b553381896e3.JPG) ![E-Greedy](https://user-images.githubusercontent.com/96347878/218325170-dc26f020-fa57-4837-86d7-ad7ff1bde2b5.JPG) ![E-greedy_AvgSample](https://user-images.githubusercontent.com/96347878/218325177-cb3cccd9-b090-443d-8861-0348b9d54730.JPG) ![UCB](https://user-images.githubusercontent.com/96347878/218325182-3f522904-3f0e-41f9-b56e-5e368daaa9c0.JPG) ![SGA](https://user-images.githubusercontent.com/96347878/218325187-1fa3acd0-b6b2-4ea0-9f8a-418ce883ef0f.JPG)
 
-- Upper Confidence Bounds policy<br/>$A_{t} = argmax {\left\lbrack\ Q_{t} + c*\sqrt{log(t) \over N_{t}(a)} \right\rbrack}$
-- Stochastic gradient ascent policy<br/>
-$Pr({A_{t}=a})$ = $e^{H_{t}(a)}\over{\sum_{b=1}^k e^{H_{t}(b)}}$ = $\pi_{t}(a)$<br/>
-$H_{t+1}(a) = H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$
 
-![combine_images-min](https://user-images.githubusercontent.com/96347878/215682825-eb8806d5-d5ef-46af-b0a6-ef396c6f0458.jpg)
 
 
 ---
