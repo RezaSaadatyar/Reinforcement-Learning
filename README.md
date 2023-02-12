@@ -162,7 +162,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >*For all* $a \epsilon A(S_t):$<br/>
 >$\pi(a|S_t)\leftarrow 1-\epsilon+\epsilon+\epsilon/|A(S_t)|$ *if* $a=A^*$  *or* $\epsilon/|A(S_t)|$ *if* $a\neq A^*$
 
->![Value prediction; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218038914-64fbb049-d254-4956-8fb6-f3b4d77fabb9.gif) ![Value prediction; gamma(0 999)](https://user-images.githubusercontent.com/96347878/218040461-88f72a02-f5b4-4940-9e8c-918f3bb90e51.gif)<br/>
+>![First-visit MC; gamma(0 999)](https://user-images.githubusercontent.com/96347878/218338749-ea0bf505-58b0-4e54-90a8-7da5e49aef23.gif)![Exploring Starts; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218341503-6baa2c11-02dc-422f-b51d-39b948da7809.gif) ![On-policy; gamma(0 98)](https://user-images.githubusercontent.com/96347878/218342760-6664aef4-3ef0-475c-8790-5c52fab18a38.gif)![First-visit MC; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218338754-6ff7a02f-9a6a-49c2-a540-3fef31e98c58.gif)![Exploring Starts; gamma(0 9999)](https://user-images.githubusercontent.com/96347878/218343028-c253c187-66b8-4df2-95f9-6441ea3a8ea9.gif)![On-policy; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218342795-5d498a36-05cf-4c87-8c39-c010baadb865.gif)
 >
 >***Temporal Difference (TD) Learning***<br/>
 >>***TD(0):*** TD(0) is the simplest form of TD learning. This type of TD learning updates the value function with the value of each step along the way, and rewards along the way are obtained. After a sufficient number of samplings (in the limit of infinity), the observed reward is the key to keeping the algorithm grounded.<br/>
