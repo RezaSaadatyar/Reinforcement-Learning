@@ -57,7 +57,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 - ***Stochastic gradient ascent policy (SGA)***<br/>
     $Pr({A_{t}=a})$ = $e^{H_{t}(a)}\over{\sum_{b=1}^k e^{H_{t}(b)}}$ = $\pi_{t}(a)$
     $H_{t+1}(a) = H_t(a) + \alpha*(R_t - mean(R_t))(1_{\alpha=A_{t}} - \pi_{t}(a)$<br/>
-![Greedy](https://user-images.githubusercontent.com/96347878/218325166-2ca3fc59-2827-4e4e-ae89-b553381896e3.JPG) ![E-Greedy](https://user-images.githubusercontent.com/96347878/218325170-dc26f020-fa57-4837-86d7-ad7ff1bde2b5.JPG) ![E-greedy_AvgSample](https://user-images.githubusercontent.com/96347878/218325177-cb3cccd9-b090-443d-8861-0348b9d54730.JPG) ![UCB](https://user-images.githubusercontent.com/96347878/218325182-3f522904-3f0e-41f9-b56e-5e368daaa9c0.JPG) ![SGA](https://user-images.githubusercontent.com/96347878/218325187-1fa3acd0-b6b2-4ea0-9f8a-418ce883ef0f.JPG)
+![Greedy](https://user-images.githubusercontent.com/96347878/218325166-2ca3fc59-2827-4e4e-ae89-b553381896e3.JPG) ![E-Greedy](https://user-images.githubusercontent.com/96347878/218325170-dc26f020-fa57-4837-86d7-ad7ff1bde2b5.JPG)![E-greedy_AvgSample](https://user-images.githubusercontent.com/96347878/218325177-cb3cccd9-b090-443d-8861-0348b9d54730.JPG)![UCB](https://user-images.githubusercontent.com/96347878/218325182-3f522904-3f0e-41f9-b56e-5e368daaa9c0.JPG) ![SGA](https://user-images.githubusercontent.com/96347878/218325187-1fa3acd0-b6b2-4ea0-9f8a-418ce883ef0f.JPG)
 
 
 
