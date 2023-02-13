@@ -159,7 +159,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >$Q(S_t, A_t)\leftarrow$ *average(Retuens*$(S_t, A_t))$<br/>
 >$A^.\leftarrow argmax_a Q(S_t, a)$<br/>
 >*For all* $a \epsilon A(S_t):$<br/>
->$\pi(a|S_t)\leftarrow 1-\epsilon+\epsilon+\epsilon/|A(S_t)|$ *if* $a=A^*$  *or* $\epsilon/|A(S_t)|$ *if* $a\neq A^*$
+>$\pi(a|S_t)\leftarrow 1-\epsilon+\epsilon/|A(S_t)|$ *if* $a=A^.$  *or* $\epsilon/|A(S_t)|$ *if* $a\neq A^.$
 >
 >![First-visit MC; gamma(0 999)](https://user-images.githubusercontent.com/96347878/218338749-ea0bf505-58b0-4e54-90a8-7da5e49aef23.gif)![Exploring Starts; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218341503-6baa2c11-02dc-422f-b51d-39b948da7809.gif) ![On-policy; gamma(0 98)](https://user-images.githubusercontent.com/96347878/218342760-6664aef4-3ef0-475c-8790-5c52fab18a38.gif)![First-visit MC; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218338754-6ff7a02f-9a6a-49c2-a540-3fef31e98c58.gif)![Exploring Starts; gamma(0 9999)](https://user-images.githubusercontent.com/96347878/218343028-c253c187-66b8-4df2-95f9-6441ea3a8ea9.gif)![On-policy; gamma(0 99)](https://user-images.githubusercontent.com/96347878/218342795-5d498a36-05cf-4c87-8c39-c010baadb865.gif)
 >
@@ -179,7 +179,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >*untile S is terminal*<br/>
 >
 >>***Q-Learning:*** Q-learning uses the off-policy learning technique, where the agent learns the desired actions based on the previous states and awards. A greedy search improves an agent's learning by considering only the maximum reward received for a particular set of actions. Previous states and previous rewards are considered for newer states of operations.<br/>
->***Q-learning (off-policy TD control) for estimating** $\pi \approx \pi_.$ :<br/>
+>***Q-learning (off-policy TD control) for estimating*** $\pi \approx \pi_.$ :<br/>
 >*Algorithm parameters: step size* $\alpha \epsilon (0, 1]$, *small* $\epsilon > 0$<br/>
 >*Initialize Q(s,a), for all* $s \epsilon S^+, a\epsilon A(s)$, *arbitrarily expect that Q(terminal, .)=0*<br/>
 >*Loop for each episode:*<br/>
@@ -208,4 +208,4 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >
 >>***Deep Q Neural Network (DQN):*** DQN, is Q learning with the help of neural networks. Defining and updating a Q-table in a large state space environment is a daunting task. To solve this very issue, we use the DQN algorithm to approximate Q values for every action and state.<br/>
 >
-> ![TD(0); gamma is 0 95; alpha is 0 1](https://user-images.githubusercontent.com/96347878/217924378-6fcf6c71-19e9-4e84-adbf-713585bd8b22.gif) ![Q_learning; gamma(0 7); alpha(0 1)](https://user-images.githubusercontent.com/96347878/217938957-9a8ce4b5-2784-498e-b27c-5f42f14262c7.gif) ![TD(0); gamma(0 999); alpha(0 1)](https://user-images.githubusercontent.com/96347878/217923879-1591916f-9d12-4732-b45a-c2ca0d6651b0.gif) ![Q_learning; gamma(0 8); alpha(0 1)](https://user-images.githubusercontent.com/96347878/217956932-c6246c9e-08c7-41e4-995e-012b57ce0e18.gif)
+> ![TD(0); gamma(0 99)](https://user-images.githubusercontent.com/96347878/218345072-eb1ea875-9561-401a-a935-0a73d0f8ce4d.gif) ![Q_learning; gamma(0 5)](https://user-images.githubusercontent.com/96347878/218345254-1dd553e9-b0e2-493f-8b85-ce9e17fd5f80.gif) ![TD(0); gamma(0 999)](https://user-images.githubusercontent.com/96347878/218345065-3749543d-4b53-467e-9e7a-149c3456171f.gif) ![Q_learning; gamma(0 6)](https://user-images.githubusercontent.com/96347878/218345159-dc2ebb11-171f-4fb5-8f76-39a316cb479a.gif)
