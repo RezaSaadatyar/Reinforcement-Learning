@@ -1,8 +1,7 @@
  **Reinforcement Learning (RL)**<br/>
-Reinforcement Learning (RL) is a type of Machine Learning which is based on feedback and enables an agent to learn how to interact with an environment through executing various actions and monitoring their outcomes. Rewards are provided for successful activities and penalties imposed for unsuccessful ones, allowing the agent to learn from trial and error over time and thus become more competent in completing a given task.
+Reinforcement Learning (RL) is a type of Machine Learning that is based on feedback and enables an agent to learn how to interact with an environment through executing various actions and monitoring their outcomes. Rewards are provided for successful activities and penalties are imposed for unsuccessful ones, allowing the agent to learn from trial and error over time and thus become more competent in completing a given task.
 
 ![image](https://user-images.githubusercontent.com/96347878/215663658-f9d0339f-4ae1-4000-98ed-dc696fc805ac.png)
-
 
  **Elements of RL:**
  - Agent: The ability to interpret the environment and act on it.
@@ -11,16 +10,16 @@ Reinforcement Learning (RL) is a type of Machine Learning which is based on feed
  - State: The current state of the agent.
  - Reward: Feedback from the environment after the agent evaluates its actions.
  - Policy: The method by which the agent decides what action to take based on the current situation.
- - Value: The reward that an agent will receive for performing an action in a particular state.
+ - Value: The reward that an agent will receive for acting in a particular state.
  
  **Sequential Decision making:**
- - Goal: select actions to maximize total future reward
- - Actions may have long term consequences
+ - Goal: Select actions to maximize total future reward
+ - Actions may have long-term consequences
  - Reward may be delayed
  - It may be better to sacrifice immediate reward to gain more long-term reward
  
  **Agent & Environment:**
- - At each step t,the agent:
+ - At each step t, the agent:
    - Executes action $A_{t}$
    - Receives observation $O_{t}$
    - Receives scalar reward $R_{t}$
@@ -28,11 +27,11 @@ Reinforcement Learning (RL) is a type of Machine Learning which is based on feed
    - Receives action $A_{t}$
    - Emits observation $O_{t+1}$
    - Emits scalar reward $R_{t+1}$
- -  t increments at environment step
+ -  t increments at the environment step
 
 ---
 **Multi-armed bandit Problem:**<br/>
-The multi-armed bandit problem is a classic example of reinforcement learning, in which there is a slot machine with n arms (bandits) that each have their own underlying probability distribution of success. Pulling any arm will result in either a stochastic reward of *R=+1* for success or *R=0* for failure. The objective of this problem is to maximize the total reward collected, by pulling the arms one-by-one in sequential order, over the long run.<br/>
+The multi-armed bandit problem is a classic example of reinforcement learning, in which there is a slot machine with n arms (bandits) that each has their own underlying probability distribution of success. Pulling any arm will result in either a stochastic reward of *R=+1* for success or *R=0* for failure. The objective of this problem is to maximize the total reward collected, by pulling the arms one by one in sequential order, over the long run.<br/>
 ***Multi-armed bandit solutions:***
 - ***ε-Greedy policy***:<br/>
 Initialize, for a = 1 to k:<br/>
@@ -48,9 +47,9 @@ where *N* is the counter for how many times action a (bandit) was chosen in the 
 $Q(A) \leftarrow Q(A)+\frac{R-Q(A)}{N(A)}$; $N(A)\leftarrow$ *Average samples* <br/>
 $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
    - Exploration-Exploitation in Epsilon Greedy Algorithm:<br/>
-*Exploitation* is when the agent knows all his options and chooses the best option based on the previous success rates. Whereas *exploration* is the concept where the agent is unaware of his opportunities and tries to explore other options to better predict and earn rewards.<br/>
-   - Epsilon Greedy Action Selection:** The epsilon greedy algorithm chooses between *exploration* and *exploitation* by estimating the highest rewards. It determines the optimal action. It takes advantage of previous knowledge to choose exploitation, looks for new options, and select exploration.<br/>
-   - Advantages of Epsilon Greedy Algorithm:<br/>The epsilon greedy algorithm's significant advantage is that it is able to learn from past experiences, like other decision-making models, and explore new outcomes. The ability to explore new situations and have diverse knowledge leads to better decision-making.<br/>
+*Exploitation* is when the agcanall his options and chooses the best option based on the previous success rates. Whereas *exploration* is the concept where the agent is unaware of his opportunities and tries to explore other options to better predict and earn rewards.<br/>
+   - Epsilon Greedy Action Selection:** The epsilon greedy algorithm chooses between *exploration* and *exploitation* by estimating the highest rewards. It determines the optimal action. It takes advantage of previous knowledge to choose exploitation, look for new options, and select exploration.<br/>
+   - Advantages of Epsilon Greedy Algorithm:<br/>The Epsilon greedy algorithm's significant advantage is that it is able to learn from past experiences, like other decision-making models, and explore new outcomes. The ability to explore new situations and have diverse knowledge leads to better decision-making.<br/>
    - Disadvantages of Epsilon Greedy Algorithm:<br/> A greedy algorithm such as Epsilon can sometimes explore new parameters and determine which user is dissatisfied. 
 - ***Upper Confidence Bounds policy (UCB)***<br/>$A_{t} = argmax {\left\lbrack\ Q_{t} + c*\sqrt{log(t) \over N_{t}(a)} \right\rbrack}$<br/>
 - ***Stochastic gradient ascent policy (SGA)***<br/>
@@ -170,12 +169,12 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >*Initialize V(s), for all* $s \epsilon S^+$, *arbitrarily expect that V(terminal)=0*<br/>
 >*Loop for each episode:*<br/>
 >*Initialize S*<br/>
->*Loop for each step of episode:*<br/>
+>*Loop for each step of the episode:*<br/>
 >$A \leftarrow$ *action given by* $\pi$ *for S*<br/>
 >*Take action A, observe R,* $S^.$<br/>
 >$V(S) \leftarrow V(S) + \alpha[R+\lambda V(S^.)-V(S)]$<br/>
 >$S \leftarrow S^.$<br/>
->*untile S is terminal*<br/>
+>*until S is terminal*<br/>
 >
 >>***Q-Learning:*** Q-learning uses the off-policy learning technique, where the agent learns the desired actions based on the previous states and awards. A greedy search improves an agent's learning by considering only the maximum reward received for a particular set of actions. Previous states and previous rewards are considered for newer states of operations.<br/>
 >***Q-learning (off-policy TD control) for estimating*** $\pi \approx \pi_.$ :<br/>
@@ -183,7 +182,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >*Initialize Q(s,a), for all* $s \epsilon S^+, a\epsilon A(s)$, *arbitrarily expect that Q(terminal, .)=0*<br/>
 >*Loop for each episode:*<br/>
 >*Initialize S*<br/>
->*Loop for each step of episode:*<br/>
+>*Loop for each step of the episode:*<br/>
 >*Choose A from S using policy derived from Q(e.g., e-greedy)*<br/>
 >*Take action A, observe R,* $S^.$<br/>
 >*Choose* $A^.$ *from* $S^.$ *using policy derived from Q(e.g., e-greedy)*<br/>
@@ -198,7 +197,7 @@ $Q(A) \leftarrow Q(A)+\alpha*({R-Q(A)})$; $\alpha\leftarrow$ *Constant alpha*
 >*Loop for each episode:*<br/>
 >*Initialize S*<br/>
 >*Choose A from S using policy derived from Q(e.g., e-greedy)*<br/>
->*Loop for each step of episode:*<br/>
+>*Loop for each step of the episode:*<br/>
 >  *Take action A, observe R,* $S^.$<br/>
 >  *Choose* $A^.$ *from* $S^.$ *using policy derived from Q(e.g., e-greedy)*<br/>
 >  $Q(S,A) \leftarrow Q(S,A) + \alpha[R+\lambda Q(S^., A^.)-Q(S, A)]$<br/>
