@@ -1,7 +1,7 @@
  **Reinforcement Learning (RL)**<br/>
 Reinforcement Learning (RL) is a type of Machine Learning that is based on feedback and enables an agent to learn how to interact with an environment through executing various actions and monitoring their outcomes. Rewards are provided for successful activities and penalties are imposed for unsuccessful ones, allowing the agent to learn from trial and error over time and thus become more competent in completing a given task.
 
-![image](https://user-images.githubusercontent.com/96347878/215663658-f9d0339f-4ae1-4000-98ed-dc696fc805ac.png)
+![image](https://user-images.githubusercontent.com/96347878/215663658-f9d0339f-4ae1-4000-98ed-dc696fc805ac.png) ![alt text](Agent.png)
 
  **Elements of RL:**
  - Agent: The ability to interpret the environment and act on it.
@@ -11,13 +11,13 @@ Reinforcement Learning (RL) is a type of Machine Learning that is based on feedb
  - Reward: Feedback from the environment after the agent evaluates its actions.
  - Policy: The method by which the agent decides what action to take based on the current situation.
  - Value: The reward that an agent will receive for acting in a particular state.
- 
+
  **Sequential Decision making:**
  - Goal: Select actions to maximize total future reward
  - Actions may have long-term consequences
  - Reward may be delayed
  - It may be better to sacrifice immediate reward to gain more long-term reward
- 
+
  **Agent & Environment:**
  - At each step t, the agent:
    - Executes action $A_{t}$
