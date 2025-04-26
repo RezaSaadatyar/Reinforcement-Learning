@@ -1,4 +1,4 @@
- **Reinforcement Learning (RL)**<br/>
+## Reinforcement Learning (RL)
 Reinforcement Learning (RL) is a type of Machine Learning that is based on feedback and enables an agent to learn how to interact with an environment through executing various actions and monitoring their outcomes. Rewards are provided for successful activities and penalties are imposed for unsuccessful ones, allowing the agent to learn from trial and error over time and thus become more competent in completing a given task.
 
 
